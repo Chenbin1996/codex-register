@@ -20,7 +20,7 @@ from .freemail import FreemailService
 # 注册服务
 EmailServiceFactory.register(EmailServiceType.TEMPMAIL, TempmailService)
 EmailServiceFactory.register(EmailServiceType.OUTLOOK, OutlookService)
-EmailServiceFactory.register(EmailServiceType.CUSTOM_DOMAIN, MeoMailEmailService)
+EmailServiceFactory.register(EmailServiceType.MOE_MAIL, MeoMailEmailService)
 EmailServiceFactory.register(EmailServiceType.TEMP_MAIL, TempMailService)
 EmailServiceFactory.register(EmailServiceType.DUCK_MAIL, DuckMailService)
 EmailServiceFactory.register(EmailServiceType.FREEMAIL, FreemailService)

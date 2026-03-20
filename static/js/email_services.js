@@ -4,7 +4,7 @@
 
 // 状态
 let outlookServices = [];
-let customServices = [];  // 合并 custom_domain + temp_mail + duck_mail
+let customServices = [];  // 合并 moe_mail + temp_mail + duck_mail
 let selectedOutlook = new Set();
 let selectedCustom = new Set();
 
@@ -293,11 +293,11 @@ function getCustomServiceAddress(service) {
     return `${escapeHtml(baseUrl)}<div style="color: var(--text-muted); margin-top: 4px;">默认域名：@${escapeHtml(domain)}</div>`;
 }
 
-// 加载自定义邮箱服务（custom_domain + temp_mail + duck_mail + freemail 合并）
+// 加载自定义邮箱服务（moe_mail + temp_mail + duck_mail + freemail 合并）
 async function loadCustomServices() {
     try {
         const [r1, r2, r3, r4] = await Promise.all([
-            api.get('/email-services?service_type=custom_domain'),
+            api.get('/email-services?service_type=moe_mail'),
             api.get('/email-services?service_type=temp_mail'),
             api.get('/email-services?service_type=duck_mail'),
             api.get('/email-services?service_type=freemail')
@@ -422,7 +422,7 @@ async function handleAddCustom(e) {
 
     let serviceType, config;
     if (subType === 'moemail') {
-        serviceType = 'custom_domain';
+        serviceType = 'moe_mail';
         config = {
             base_url: formData.get('api_url'),
             api_key: formData.get('api_key'),

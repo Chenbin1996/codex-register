@@ -153,7 +153,7 @@ async def get_email_services_stats():
         for service_type, count in type_stats:
             if service_type == 'outlook':
                 stats['outlook_count'] = count
-            elif service_type == 'custom_domain':
+            elif service_type == 'moe_mail':
                 stats['custom_count'] = count
             elif service_type == 'temp_mail':
                 stats['temp_mail_count'] = count
@@ -191,8 +191,8 @@ async def get_service_types():
                 ]
             },
             {
-                "value": "custom_domain",
-                "label": "自定义域名",
+                "value": "moe_mail",
+                "label": "MoeMail",
                 "description": "自定义域名邮箱服务",
                 "config_fields": [
                     {"name": "base_url", "label": "API 地址", "required": True},

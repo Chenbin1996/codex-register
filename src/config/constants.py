@@ -33,7 +33,7 @@ class EmailServiceType(str, Enum):
     """邮箱服务类型"""
     TEMPMAIL = "tempmail"
     OUTLOOK = "outlook"
-    CUSTOM_DOMAIN = "custom_domain"
+    MOE_MAIL = "moe_mail"
     TEMP_MAIL = "temp_mail"
     DUCK_MAIL = "duck_mail"
     FREEMAIL = "freemail"
@@ -109,7 +109,7 @@ EMAIL_SERVICE_DEFAULTS = {
         "smtp_port": 587,
         "timeout": 30,
     },
-    "custom_domain": {
+    "moe_mail": {
         "base_url": "",  # 需要用户配置
         "api_key_header": "X-API-Key",
         "timeout": 30,
